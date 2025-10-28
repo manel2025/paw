@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head>
+    <title>Attendance</title>
+     <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="navbar">
+    <a href="home.html">Home</a>
+    <a href="index.html">Attendance List</a>
+    <a href="add-student.html" class="active">Add Student</a>
+    <a href="#">Reports</a>
+    <a href="#">Logout</a>
+  </div>
+    
+        <h1>Attendance List</h1>
+    <table>
+        <tr>
+            <th rowspan="2">Last Name</th>
+            <th rowspan="2">First Name</th>
+            <th colspan="2">S1</th>
+            <th colspan="2">S2</th>
+            <th colspan="2">S3</th>
+            <th colspan="2">S4</th>
+            <th colspan="2">S5</th>
+            <th colspan="2">S6</th>
+            <th rowspan="2">Absences</th>
+            <th rowspan="2">Participations</th>
+            <th rowspan="2">Message</th>
+        </tr>
+
+        <tr>
+            <th>P</th><th>Pa</th>
+            <th>P</th><th>Pa</th>
+            <th>P</th><th>Pa</th>
+            <th>P</th><th>Pa</th>
+            <th>P</th><th>Pa</th>
+            <th>P</th><th>Pa</th>
+        </tr>
+        <tr>
+            <td>Ahmed</td>
+            <td>Sara</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             
+        </tr>
+
+        <tr>
+            <td>Yacine</td>
+            <td>Ali</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             
+        </tr>
+
+        <tr>
+            <td>Houcine</td>
+            <td>Rania</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            
+        </tr>
+    </table>
+
+    <script>
+function calculateAttendance() {
+     const rows = document.querySelectorAll("table tr");
+    for (let i = 2; i < rows.length; i++) {
+        const row = rows[i];
+        const checkboxes = row.querySelectorAll("input[type='checkbox']");
+        let absences = 0;
+        let participations = 0;
+
+        for (let j = 0; j < checkboxes.length; j += 2) {
+            const present = checkboxes[j].checked;
+            const participated = checkboxes[j + 1].checked;
+
+            if (!present) absences++;
+            if (participated) participations++;
+        }
+
+        row.cells[14].textContent = absences;
+        row.cells[15].textContent = participations;
+
+        if (absences < 3) {
+            row.style.backgroundColor = "lightgreen";
+            row.cells[16].textContent = "Good attendance - Excellent participation";
+        } else if (absences >= 3 && absences <= 4) {
+            row.style.backgroundColor = "khaki";
+            row.cells[16].textContent = "Warning - attendance low - You need to participate more";
+        } else {
+            row.style.backgroundColor = "lightcoral";
+            row.cells[16].textContent = "Excluded - too many absences - You need to participate more";
+        }
+    }
+}
+</script>
+
+<button onclick="calculateAttendance()">Check Attendance</button>
+
+
+</body>
+</html>

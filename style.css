@@ -1,0 +1,146 @@
+body { 
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 10px;
+  background-color: #faf7f3; 
+}
+
+.navbar {
+  background-color: #8b5e3c; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+  color: #fffaf3; 
+  text-decoration: none;
+  padding: 10px 12px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  background-color: #70462c; 
+}
+
+.navbar a.active {
+  background-color: #a47148; 
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+h1 {
+  color: #3e3e3e;
+  margin-bottom: 15px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+th, td {
+  border: 1px solid #e0d6c9;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2e8dc; 
+}
+
+form {
+  background: white;
+  padding: 15px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #4b3b2a;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #cdbba2;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: #8b5e3c;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover {
+  background-color: #70462c;
+}
+    .green { background-color: #9cfd9c; }
+    .yellow { background-color: #fef397; }
+    .red { background-color: #f59b9b; }
+
+    button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #3c170c;
+        color: rgb(26, 19, 19);
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #f17042;
+    }
+
+@media (min-width: 768px) {
+  table {
+    width: 90%;
+    font-size: 15px;
+  }
+  form {
+    width: 80%;
+    max-width: 400px;
+  }
+  .navbar a {
+    padding: 12px 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  table {
+    width: 80%;
+    font-size: 16px;
+  }
+  form {
+    width: 50%;
+  }
+}
